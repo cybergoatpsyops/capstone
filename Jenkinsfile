@@ -6,12 +6,12 @@ pipeline {
                 echo 'Building..'
             }
         }
-	 stage(‘Lint HTML’) {
+        stage(‘Lint HTML’) {
       	    steps {
-        	sh ‘tidy -q -e *.html’
+                sh ‘tidy -q -e *.html’
 	    }
      	}
-	  stage('Security Scan') {
+        stage('Security Scan') {
             steps {
                 aquaMicroscanner imageName: 'alpine:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
             }
