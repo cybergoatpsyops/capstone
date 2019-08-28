@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+      stage('Build') {
+        steps {
+	    echo 'Building..'
+	}
+      }  
       stage('AWS Credentials') {
         steps {
           withCredentials(
