@@ -39,7 +39,7 @@ pipeline {
           }
         stage('Create EC2 Instance') {
           steps {
-            ansiblePlaybook playbook: 'main.yaml', inventory: 'inventory'
+            ansiblePlaybook playbook: '. /roles/create_instance/main.yaml', inventory: '. /roles/create_instance/inventory'
       }
     }
   }
