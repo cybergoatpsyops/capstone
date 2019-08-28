@@ -37,10 +37,5 @@ pipeline {
               }
             }
           }
-        stage('Create EC2 Instance') {
-          steps {
-            ansiblePlaybook playbook: '. /roles/create_instance/main.yaml', inventory: '. /roles/create_instance/inventory'
-      }
+	}
     }
-  }
-}
