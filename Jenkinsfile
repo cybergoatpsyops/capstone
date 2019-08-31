@@ -36,13 +36,13 @@ pipeline {
               """
               }
             }
+	  }
       stage(‘Upload to AWS’) {
         steps {
-          withAWS(region:’us-east-1’,credentials:’capstone’) {
+          withAWS(region:’us-west-2’,credentials:’capstone’) {
             s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:’index.html’, bucket:’c3pipelines’)
           }
         }
       }
     }
   }
-}
